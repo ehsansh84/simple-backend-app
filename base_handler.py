@@ -89,10 +89,10 @@ class BaseHandler(RequestHandler):
                     'note': self.note,
                 })
         except Exception as e:
-            log.error(f'Error {str(e)}')
+            log.error(ExceptionLine())
             log.debug(group)
             log.debug(id)
-            log.debug(consts.MESSAGES)
+            # log.debug(consts.MESSAGES)
             self.status = False
             self.set_status(401)
             self.note = 'Server message not found: %s/%s' % (group, id)
